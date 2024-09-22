@@ -15,3 +15,13 @@ run `go get ...` to download the packages and after that just run:
 go build
 ./gogo
 ```
+
+## TODO
+
+[] dynmic file for command handlers<br>
+[] proper multi-environment configurations<br>
+[] more commands that use more features from discord.go
+
+## Learning resources
+[examples](https://github.com/bwmarrin/discordgo/blob/master/examples/pingpong/main.go)
+[discordgo](https://pkg.go.dev/github.com/bwmarrin/discordgo#section-readme)
