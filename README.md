@@ -23,6 +23,7 @@ go build
 ## Learning resources
 [examples](https://github.com/bwmarrin/discordgo/blob/master/examples/pingpong/main.go)<br>
 [discordgo](https://pkg.go.dev/github.com/bwmarrin/discordgo#section-readme)
+[logrocket](https://blog.logrocket.com/making-http-requests-in-go/)
 
 ## About dynamic commands
 It isn't really that dynamic and if you open the command files you will see what I mean.
