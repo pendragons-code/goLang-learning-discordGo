@@ -18,8 +18,7 @@ go build
 
 ## TODO
 
-[] dynmic file for command handlers<br>
-[] proper multi-environment configurations<br>
+[???] dynmic file for command handlers<br>
 [] more commands that use more features from discord.go
 
 ## Learning resources

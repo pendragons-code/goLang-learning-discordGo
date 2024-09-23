@@ -20,8 +20,6 @@ func main() {
 	}
 
 	TOKEN := os.Getenv("TOKEN")
-
-
 	
 	// Discord Client
 	dg, err := discordgo.New("Bot " + TOKEN)
