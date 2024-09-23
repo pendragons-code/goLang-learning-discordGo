@@ -2,6 +2,7 @@ package main
 
 import (
 	"discordBot/gogo/eventHandler"
+	_ "discordBot/gogo/commands"
 	"fmt"
 	"log"
 	"os"

@@ -18,8 +18,6 @@ go build
 ```
 
 ## TODO
-
-[???] dynmic file for command handlers<br>
 [] more commands that use more features from discord.go
 
 ## Learning resources
@@ -27,4 +25,4 @@ go build
 [discordgo](https://pkg.go.dev/github.com/bwmarrin/discordgo#section-readme)
 
 ## About dynamic commands
-I have no idea how to approach this. I mean, it all gets compiled in, how do you do it dynamically?
+It isn't really that dynamic and if you open the command files you will see what I mean.

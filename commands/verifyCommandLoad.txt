@@ -1,0 +1,9 @@
+/*package commands
+
+import (
+	"fmt"
+)
+
+func VerifyCallInit() {
+	fmt.Println("Commands Loading!")
+}*/

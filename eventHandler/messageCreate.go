@@ -6,20 +6,24 @@ import (
 	"strings"
 	"github.com/bwmarrin/discordgo"
 	"github.com/joho/godotenv"
-	"discordBot/gogo/CMD"
 )
 
 
 
 // this has got to be about the most goofy thing I have ever done.
 type messageCommands func(*discordgo.Session, *discordgo.MessageCreate)
-var commandMap = map[string]messageCommands {
-	"ping": commands.Ping,
-	"pong": commands.Pong,
+var commandMap = make(map[string]messageCommands)
+
+
+
+// command init
+func RegisterCommand(name string, command messageCommands) {
+	commandMap[name] = command
 }
 
 
 
+// messageCreate
 func MessageCreate(session *discordgo.Session, message *discordgo.MessageCreate) {
 	
 	// environment variables
