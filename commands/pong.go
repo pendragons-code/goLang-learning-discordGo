@@ -9,7 +9,7 @@ func init() {
 	events.RegisterCommand("pong", Pong)
 }
 
-func Pong(session *discordgo.Session, message *discordgo.MessageCreate) {
+func Pong(session *discordgo.Session, message *discordgo.MessageCreate, args []string) {
 	session.ChannelMessageSend(message.ChannelID, "Ping!")
 }
 

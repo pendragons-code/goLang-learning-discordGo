@@ -18,9 +18,14 @@ func main() {
 	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatalf("Error loading .env file")
+		return
 	}
 
 	TOKEN := os.Getenv("TOKEN")
+	if TOKEN == "" {
+		log.Fatalf(".env file has not token defined")
+	}	
+
 	
 	// Discord Client
 	dg, err := discordgo.New("Bot " + TOKEN)

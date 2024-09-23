@@ -11,7 +11,7 @@ import (
 
 
 // this has got to be about the most goofy thing I have ever done.
-type messageCommands func(*discordgo.Session, *discordgo.MessageCreate)
+type messageCommands func(*discordgo.Session, *discordgo.MessageCreate, []string)
 var commandMap = make(map[string]messageCommands)
 
 
@@ -34,9 +34,11 @@ func MessageCreate(session *discordgo.Session, message *discordgo.MessageCreate)
 
 	// PREFIX
 	PREFIX := os.Getenv("PREFIX")
-	
+	if PREFIX == "" {
+		log.Fatalf(".env file has not prefix defined")
+	}	
 
-	
+
 
 	// I am not gonna combine these 2 since they are not related and it helps me learn easier.
 
@@ -66,9 +68,16 @@ func MessageCreate(session *discordgo.Session, message *discordgo.MessageCreate)
 	args := strings.Fields(content)
 	name := strings.ToLower(args[0])
 
-	// check if command exists
+	// Remove the command name from args to pass only arguments
+	if len(args) > 1 {
+		args = args[1:]
+	} else {
+		args = []string{} // No arguments
+	}
+
+	// Check if command exists
 	if cmd, exists := commandMap[name]; exists {
-		cmd(session, message)
+		cmd(session, message, args)
 	} else {
 		session.ChannelMessageSend(message.ChannelID, "Unknown command: "+name)
 	}
